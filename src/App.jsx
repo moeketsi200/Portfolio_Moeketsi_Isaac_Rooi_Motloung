@@ -32,10 +32,10 @@ function App() {
 
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID',    // 🔑 Replace with your EmailJS Service ID
-        'YOUR_TEMPLATE_ID',   // 🔑 Replace with your EmailJS Template ID
+        'service_tma0ubh',
+        'template_a5xn5vk',
         formRef.current,
-        'YOUR_PUBLIC_KEY'     // 🔑 Replace with your EmailJS Public Key
+        'AxYlZ8tP4F6hJ-a1P'
       )
       .then(() => {
         setFormStatus('success');

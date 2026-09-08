@@ -45,6 +45,7 @@ const Projects = () => {
       desc: 'A Tesla concept website with a hero section, contact form, services, and custom footer.',
       link: 'https://6917137f1f6dd9319bebcbbd--soft-khapse-ac9e7e.netlify.app/'
     }
+    
   ];
 
   return (

@@ -1,42 +1,125 @@
 import React, { useState, useEffect } from 'react';
-import heroImage from '../assets/Rooi.jpeg';
+import heroImg from '../assets/Rooi.jpeg';
 
 const Hero = () => {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [textOpacity, setTextOpacity] = useState(1);
-  const words = ['Aspiring Web Designer', 'Developer'];
+  const words = [
+    'Software Engineer',
+    'Full-Stack Developer',
+    'WeThinkCode_ Peer Tutor',
+    'Clean Code Enthusiast'
+  ];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [fadeOpacity, setFadeOpacity] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextOpacity(0);
+      setFadeOpacity(0);
       setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % words.length);
-        setTextOpacity(1);
-      }, 500);
-    }, 3000);
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setFadeOpacity(1);
+      }, 400);
+    }, 2800);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   return (
-    <section id="home" className="hero">
-      <div className="text">
-        <h1>Hello, It's <span>Moeketsi Motloung</span></h1>
-        <p>I'm a <span className="highlight slideshow-text" style={{ opacity: textOpacity, transition: 'opacity 0.5s ease' }}>
-          {words[wordIndex]}
-        </span></p>
-        <div className="buttons">
-          <a href="/Moeketsi-Motloung-CV.pdf" className="btn" download target="_blank" rel="noopener noreferrer">Download CV</a>
-          <a href="#contact" className="btn-outline">Hire Me</a>
+    <section id="home" className="hero-section">
+      <div className="hero-content">
+        <div className="hero-text">
+          <div className="hero-badge">
+            <span className="badge-dot"></span> Available for New Opportunities
+          </div>
+          <h1 className="hero-title">
+            Hello, It's <br />
+            <span className="highlight-gradient">Moeketsi Motloung</span>
+          </h1>
+          <p className="hero-subtitle">
+            I am a{' '}
+            <span className="highlight slideshow-text" style={{ opacity: fadeOpacity }}>
+              {words[currentWordIndex]}
+            </span>
+          </p>
+          <p className="hero-description">
+            Software Engineering student (NQF Level 6) at WeThinkCode_, ranked in the Top 5 learners and selected as a Peer Tutor. I build modern, scalable web applications with Java, Python, TypeScript, React, and REST APIs.
+          </p>
+
+          <div className="hero-buttons">
+            <a
+              href="/Moeketsi-Motloung-CV.pdf"
+              className="btn btn-primary"
+              download="Moeketsi-Motloung-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-file-download"></i> Download CV
+            </a>
+            <a href="#contact" className="btn btn-outline">
+              <i className="fas fa-paper-plane"></i> Hire Me
+            </a>
+          </div>
+
+          <div className="hero-socials">
+            <span className="socials-label">Connect:</span>
+            <a
+              href="https://www.linkedin.com/in/moeketsi-isaac-rooi-motloung-02bb07231/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="social-icon"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/moeketsi200"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="social-icon"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+            <a
+              href="https://x.com/rooi_moeketsi"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X / Twitter"
+              className="social-icon"
+            >
+              <i className="fab fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://moeketsil.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Portfolio Website"
+              className="social-icon"
+            >
+              <i className="fas fa-globe"></i>
+            </a>
+          </div>
         </div>
-        <div className="socials">
-          <a href="https://www.linkedin.com/in/moeketsi-isaac-rooi-motloung-02bb07231" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-          <a href="https://github.com/moeketsi200" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+
+        <div className="hero-image-wrapper">
+          <div className="image-glow-ring"></div>
+          <div className="hero-image-frame">
+            <img src={heroImg} alt="Moeketsi Isaac Rooi Motloung" className="hero-image" />
+          </div>
+          <div className="hero-floating-card top-learner-card">
+            <i className="fas fa-award"></i>
+            <div>
+              <strong>Top 5 Learner</strong>
+              <span>WeThinkCode_</span>
+            </div>
+          </div>
+          <div className="hero-floating-card peer-tutor-card">
+            <i className="fas fa-code"></i>
+            <div>
+              <strong>Peer Tutor</strong>
+              <span>Full-Stack &amp; OOP</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="image">
-        <img src={heroImage} alt="Moeketsi Motloung" />
       </div>
     </section>
   );

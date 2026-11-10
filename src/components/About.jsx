@@ -1,26 +1,58 @@
+import React from 'react';
+import aboutImg from '../assets/Moeketsi.jpeg';
+
 const About = () => {
   return (
     <section id="about" className="about-section">
-      <h1>About <span className="highlight">Me</span></h1>
-      <div className="about-content">
-        <div className="about-image">
-          <img src="/assets/Moeketsi.jpeg" alt="Moeketsi Motloung" />
+      <div className="section-header">
+        <span className="section-badge">Get To Know Me</span>
+        <h2 className="section-title">
+          About <span className="highlight-gradient">Me</span>
+        </h2>
+      </div>
+
+      <div className="about-container">
+        <div className="about-image-col">
+          <div className="about-image-card">
+            <img src={aboutImg} alt="Moeketsi Motloung" className="about-img" />
+            <div className="experience-tag">
+              <span className="tag-number">Top 5</span>
+              <span className="tag-label">Learner at WeThinkCode_</span>
+            </div>
+          </div>
         </div>
-        <div className="about-text">
+
+        <div className="about-text-col">
+          <h3>
+            Passionate Software Engineer &amp; Peer Tutor Based in George, Western Cape
+          </h3>
           <p>
-            My name is Moeketsi Isaac Rooi Motloung, an aspiring Web Designer and Developer based in George, Western Cape. 
-            I am currently pursuing a qualification in Tourism Management at Nelson Mandela University, where I have developed 
-            a strong foundation in both academic theory and practical application.
+            I am a Software Engineering student (NQF Level 6) at <strong>WeThinkCode_</strong> with hands-on experience developing end-to-end full-stack applications using <strong>Java, Python, TypeScript, React, HTML5, CSS3, and RESTful APIs</strong>.
           </p>
           <p>
-            In addition to my academic pursuits, I am employed part-time at TFG (Sportscene), where I have cultivated valuable 
-            skills in customer service, communication, and teamwork. My background in tourism is complemented by hands-on 
-            experience in web development, with proficiency in HTML, CSS, JavaScript, and various web development tools.
+            Ranked among the <strong>top 5 learners in a cohort of approximately 180 students</strong>, I was selected as an official <strong>Peer Tutor</strong> to mentor peers, conduct code reviews, explain software engineering concepts, and debug complex challenges.
           </p>
           <p>
-            I am passionate about leveraging creativity and technology to design meaningful and user-focused digital experiences. 
-            I am eager to contribute to projects that allow me to merge my technical abilities with my interest in innovation and design.
+            My unique perspective is enhanced by prior studies in Tourism Management at <strong>Nelson Mandela University</strong>, alongside experience as an <strong>Assistant Lecturer</strong> and customer-facing experience at <strong>Sportscene (TFG)</strong>. These experiences instilled high emotional intelligence, clear communication, and empathetic problem-solving skills that make my software human-centric and resilient.
           </p>
+
+          <div className="about-stats-grid">
+            <div className="stat-card">
+              <div className="stat-icon"><i className="fas fa-trophy"></i></div>
+              <div className="stat-number">Top 5</div>
+              <div className="stat-desc">Ranked in Cohort of ~180</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-icon"><i className="fas fa-user-graduate"></i></div>
+              <div className="stat-number">Peer Tutor</div>
+              <div className="stat-desc">WeThinkCode_ Mentor</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-icon"><i className="fas fa-code-branch"></i></div>
+              <div className="stat-number">Full-Stack</div>
+              <div className="stat-desc">Java, Python &amp; React</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -28,4 +60,3 @@ const About = () => {
 };
 
 export default About;
-
